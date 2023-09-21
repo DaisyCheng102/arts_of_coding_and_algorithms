@@ -1,26 +1,43 @@
 #include <iostream>
 #include <vector>
 #include <fstream>
+#include <unordered_map>
 
 using namespace std;
-
-int max_number_of_children(vector<int> arr)
-{
-    return 0;
-}
 
 int main()
 {
     ifstream fin("input.txt");
-
-    vector<int> arr;
+    int n = 10;
     int size, val;
     fin >> size;
-    for (int j = 0; j < size; ++j)
+    unordered_map<int, int> maps;
+    int max = 0;
+    int arr[size]; // to contain the numbers
+    for (int i = 0, num = 0; i < size; ++i)
     {
-        fin >> val;
-        arr.push_back(val);
+        fin >> arr[i];
     }
-    cout << max_number_of_children(arr);
-    return 0;
+    fin.close();
+    for (int i = 0; i < size; ++i)
+    {
+        for (int j = i + 1; j < size; ++j)
+        {
+            int sum = arr[i] + arr[j];
+            if (maps.find(sum) == maps.end())
+            {
+                maps[sum] = 1;
+            }
+            else
+            {
+                ++maps[sum];
+            }
+            if (maps[sum] > max)
+            {
+                max = maps[sum];
+            }
+        }
+    }
+    cout << max << endl;
+    return max;
 }

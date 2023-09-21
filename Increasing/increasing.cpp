@@ -33,23 +33,9 @@ int main()
         }
 
         // <bool_expression>?true_expression : false_expression;
-        cout << (increasing(arr) ? "Yes" : "No") << endl;
+        cout << (increasing(arr) ? "YES" : "NO") << endl;
         //must clear arr so it doesnt contain prev numbers
         arr.clear();
     }
     return 0;
-
-    // for(int i = 0; i < arr.size();++i)
-    // {
-    //     for(int j = 0; j < arr.size();++j)
-    //     {
-    //         if(arr[i] != arr[j])
-    //         {
-    //             cout << "YES" << endl;
-    //             return 0;
-    //         }
-    //     }
-    // }
-    // cout << "NO" << endl;
-    // return 0;
 }
