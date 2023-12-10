@@ -7,9 +7,9 @@ using namespace std;
 bool short_sort(vector<char> arr)
 {
     int out_of_position = 0;
-    for(int i = 0;i < 3;++i)
+    for (int i = 0; i < 3; ++i)
     {
-        if(arr[i] != i + 'a')
+        if (arr[i] != i + 'a')
             ++out_of_position;
     }
     return (out_of_position <= 2);
@@ -17,6 +17,7 @@ bool short_sort(vector<char> arr)
 
 int main()
 {
+    ios::sync_with_stdio(false);
     ifstream fin("shortsort.txt");
     int cases;
     char a, b, c;

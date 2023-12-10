@@ -10,13 +10,14 @@ bool increasing(vector<int> arr)
         return true;
     for(int i = 0; i < arr.size();++i)
         for(int j = i + 1; j < arr.size();++j)
-            if(arr[i] != arr[j])
-                return true;
-    return false;
+            if(arr[i] == arr[j])
+                return false;
+    return true;
 }
 
 int main()
 {
+    ios::sync_with_stdio(false);
     ifstream fin("input.txt");
     int cases;
     fin >> cases;
